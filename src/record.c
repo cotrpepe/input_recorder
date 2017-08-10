@@ -78,16 +78,13 @@ static void sig_handler(int32_t sig) {
 }
 
 void record() {
-  // Variables
   struct dirent **namelist = NULL;
   int32_t evtfd[MAX_NUM_DEV_FILE] = {0};
 
-  // Xlib variables
   Display *display = XOpenDisplay(NULL);
   int32_t mouse_x = 0;
   int32_t mouse_y = 0;
 
-  // This function starts from here
   uint32_t ndev = enumerate_all_device_files(&namelist);
   open_all_device_files(evtfd, ndev, namelist, O_RDONLY);
 
