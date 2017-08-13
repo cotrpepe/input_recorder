@@ -57,7 +57,7 @@ $ sudo DISPLAY=:0 input_recorder -p tmp.txt // Executing via SSH
 or
 
 ```
-$ sudo input_recorder -v -p rec.txt // Verbose logging
+$ sudo input_recorder -v -p tmp.txt // Verbose logging
 ```
 
 # How to compile
