@@ -148,12 +148,10 @@ static void sig_handler(int sig) {
 }
 
 void write_all_events(FILE *recfp, bool is_verbose) {
-  // Variables
   struct dirent **namelist = NULL;
   int32_t evtfd[MAX_NUM_DEV_FILE] = {0};
   struct timeval prev_time = {0};
 
-  // Xlib variables
   Display *display;
   display = XOpenDisplay(0);
   int32_t current_mouse_x = 0;
@@ -161,7 +159,6 @@ void write_all_events(FILE *recfp, bool is_verbose) {
   int32_t prev_mouse_x = 0;
   int32_t prev_mouse_y = 0;
 
-  // This function starts from here
   set_sig_handler(sig_handler);
 
   uint32_t ndev = enumerate_all_device_files(&namelist);
